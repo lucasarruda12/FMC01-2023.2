@@ -1,0 +1,275 @@
+\documentclass[a4paper, 12pt]{article}
+
+% PACOTES
+\usepackage[utf8]{inputenc} % Caracteres em geral
+\usepackage[brazilian]{babel} % Idioma da página
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry} % margens
+\usepackage{fancyhdr} % Cabeçalho
+\usepackage{ulem} % Destacar, sublinhar, riscar e etc...
+\usepackage{graphicx} % Figuras
+\usepackage{booktabs} % Tabelas
+\usepackage{multicol} % Multicolunas para tabelas
+\usepackage{multirow} % Multilinhas para tabelas
+\usepackage{colortbl} % Colorir tabelas
+\usepackage[table]{xcolor} % Para usar !25 !50 !75 nas cores
+\usepackage{float} % Para manter as tabelas no canto certo
+\usepackage{amsmath} % Matrizes
+\usepackage{hyperref} % Hyperlinks
+\usepackage{tikz} % TikZ - Desenhos e Gráficos
+\usepackage{amsmath,amssymb} % Mais símbolos matemáticos
+\usepackage[shortlabels]{enumitem} % Usar letras no enumerate
+
+% PREÂMBULOS
+\pagenumbering{Roman}
+\tikzstyle{every picture}+=[remember picture,inner xsep=0,inner ysep=0.25ex]
+
+% INÍCIO DO DOCUMENTO
+\begin{document}
+
+\section{HOMEWORK}
+\subsection{2023-08-16}
+\textbf{EXERCÍCIO x1.1 \\
+Já que ‘ $\iff$ ’ corresponde à frase $\ll$se e somente se$\gg$, faz sentido pensar que uma das setinhas envolvidas (‘ $\implies$ ’ e ‘ $\impliedby$ ’) corresponde na frase $\ll$se$\gg$ e a outra na $\ll$somente se$\gg$. Qual é qual?} \\ \\
+Na minha concepção, $\impliedby$ é equivalente a "se", e $\implies$ é equivalente a "somente se". Isso porque: \\ \\
+Se supormos duas proposições, a e b. \\ \\
+Ao dizermos: "a, se b", estamos afirmando que a partir da proposição b, nós podemos determinar a veracidade da proposição a, ou seja, b $\implies$ a (ou a $\impliedby$ b). \\ \\
+Da mesma forma, ao dizermos: "a, somente se b", estamos afirmando que a partir da proposição a, nós podemos determinar a veracidade da proposição b, ou seja, a $\implies$ b. \\ \\
+Um exemplo: \\ \\
+Sejam as proposições a e b, respectivamente, "é brasileiro" e "gosta de futebol" \\ \\
+Se concordarmos que alguém \textcolor{red}{é brasileiro se gosta de futebol}, gostar de futebol passa a ser suficiente para determinar se alguém é ou não brasileiro. E, portando, gostar ou não de futebol implica ($\implies$) ser ou não brasileiro. \\ \\
+Da mesma forma, ao concordarmos que alguém \textcolor{red}{é brasileiro somente se gosta de futebol}, ser brasileiro torna-se suficiente para determinar a opinião de alguém sobre futebol. Ou seja, ser ou não brasileiro implica ($\implies$) gostar ou não de futebol. \\ \\
+
+\noindent \textbf{EXERCÍCIO x1.2. \\
+Mesma pergunta, agora lendo o ‘ $\iff$ ’ como $\ll$é suficiente e necessário para$\gg$. Uma direção corresponde ao  $\ll$suficiente$\gg$ outra ao  $\ll$necessário$\gg$. Qual é qual?} \\ \\
+Na minha concepção, $\implies$ é equivalente a "é suficiente para", e $\implies$ é equivalente a "é necessário para". Isso porque: \\ \\
+Se supormos duas proposições, a e b. \\ \\
+Ao dizermos: "a é necessário para b", nós podemos assumir que a segunda é uma condição da primeira. Logo, se b é verdadeiro, todas as suas condições, incluindo a, são verdadeiras, portando, b $\implies$ a (ou a $\impliedby$ b). \\ \\
+Da mesma forma, ao dizermos: "a é suficiente b", nós podemos assumir que a primeira é a única condição de existência da segunda e, portanto, a $\implies$ b. \\ \\
+Um exemplo: \\ \\
+Sejam as proposições a e b, respectivamente, "ser alto" e "ser bonito". \\ \\
+Se concordamos que \textcolor{red}{ser alto é necessário para ser bonito}, podemos assumir todo homem bonito é alto, pois ser alto é uma condição para ser bonito. E, portanto, ser bonito implica ($\implies$) ser alto. \\ \\
+E, se concordamos que \textcolor{red}{ser alto é suficiente para ser bonito}, podemos assumir que todo homem alto é bonito. E, portando, ser alto implica ($\implies$) ser bonito. \\ \\
+
+\noindent \textbf{EXERCÍCIO x1.3. \\
+Mude cada uma das frases do Exemplo 1.9 para resolver o type error. Não se preocupe
+com a veracidade.} \\ \\
+(1) $(x + y)^{2} \textcolor{red}{~=~} x^{2} + 2xy + y^{2}$. \\
+(2) $x(a - (b + c)) = xa - x(b + c) \textcolor{red}{~=~} xa - xb - xc$. \\
+(3) Concluimos que $(A \subseteq B) \textcolor{red}{~\implies~} (B \subseteq A)$. \\
+(4) Suponha n. Vamos demonstrar que n + 1 \textcolor{red}{= r}. \\ \\
+
+
+\noindent \textbf{EXERCÍCIO x1.4. \\ 
+Considere a definição seguinte: \\ \\
+Definição. Seja n um inteiro. Chamamos o n de par se e somente se n = 2k para qualquer inteiro k. \\ \\
+Essa definição “compila”. Mas o conceito que foi definido não é o que o seu escritor tinha
+no coração dele. \\ \\
+Por quê? Qual o problema com a definição do Exemplo 1.25? Como podemos consertar?} \\ \\
+A falta de pontuação na definição cria um sentido diferente do que o autor provavelmente intencionava. \\ \\
+Pontuando corretamente esse texto, de forma a torná-lo menos ambíguo, teríamos: "Seja n um inteiro. Chamamos o n de par se, e somente se, n = 2k, para qualquer inteiro k." \\ \\
+
+\noindent \textbf{EXERCÍCIO x1.5. \\
+Verdade ou falso?: \\ \\
+(i) se $A \equiv B$ então $A = B$; \\
+(ii) se $A \Lleftarrow\Rrightarrow B$ então $A \iff B$. \\ \\
+Observe que para cada uma dessas afirmações fazer sentido os A, B denotam objetos na primeira, mas proposições na segunda. } \\ \\
+Ambas as proposições são verdadeiras. \\ \\
+
+\noindent \textbf{EXERCÍCIO x1.6. \\
+Para cada um par de expressões escolha a melhor opção dos:
+$\Lleftarrow\Rrightarrow$, $\iff$, $\equiv$, =. \\ \\
+Observe que as versões intensionais são mais fortes que as extensionais, então quando aplica a versão intensional, precisa escolhé-la.} \\
+\begin{enumerate}
+    \item $\left\{
+    \begin{aligned}
+    &2\times3 \\
+    &6
+    \end{aligned}
+    \right.$ \\ \\
+    Nesse caso, eu usaria o símbolo de =, uma vez que os dois membros são números, são iguais, mas não necessariamente são intencionalmente iguais. \\
+
+    \item $\left\{
+    \begin{aligned}
+    &2\times3 \\
+    &3\times2
+    \end{aligned}
+    \right.$ \\ \\
+    Novamente, eu usaria o símbolo de =. Ambos os membros são números mas intencionam coisas diferentes. \\
+
+    \item $\left\{
+    \begin{aligned}
+    &\textrm{x ama y}\\
+    &\textrm{y é amado por x}
+    \end{aligned}
+    \right.$ \\ \\
+    Seguimos aqui a mesma lógica da alternativa anterior, porém, agora temos proposições. Sendo assim, eu usaria $\iff$. \\
+
+    \item $\left\{
+    \begin{aligned}
+    &\textrm{n é par}\\
+    &\textrm{existe } k \in \mathbb{Z} \textrm{ tal que } n = 2k
+    \end{aligned}
+    \right.$ \\ \\
+    Eu usaria $\Lleftarrow\Rrightarrow$. Veja que são duas proposções (tem verbo) e uma é a definição da outra. \\
+
+    \item $\left\{
+    \begin{aligned}
+    &\textrm{Matheus mora na capital do RN}\\
+    &\textrm{Matheus mora na maior cidade do RN}
+    \end{aligned}
+    \right.$ \\ \\
+    Eu usaria $\iff$. Veja que são duas proposções (tem verbo), mas ser a maior cidade não é sinônimo de ser capital. \\
+
+    \item $\left\{
+    \begin{aligned}
+    &\textrm{a capital da Grécia}\\
+    &\textrm{Aténas}
+    \end{aligned}
+    \right.$ \\ \\
+    Eu usaria =, pois são dois objetos e, apesar de Aténas ser a capital da Grécia, ser capital da Grécia não é sinônimo de ser Aténas. \\
+
+    \item $\left\{
+    \begin{aligned}
+    &\textrm{o vocalista da banda Sarcófago é professor da UFMG}\\
+    &\textrm{Wagner Moura é professor da maior universidade de MG}
+    \end{aligned}
+    \right.$ \\ \\
+    $\iff$. São proposições. Não tem a mesma intensionalidade. \\
+
+    \item $\left\{
+    \begin{aligned}
+    &\textrm{Aristoteles foi professor de Alexandre o Grande
+    }\\
+    &\textrm{Aristoteles ensinou Alexandre o Grande}
+    \end{aligned}
+    \right.$ \\ \\
+    $\Lleftarrow\Rrightarrow$. Ambas são proposições. Ser professor tem exatamente o mesmo sentido de ensinar. \\
+
+    \item $\left\{
+    \begin{aligned}
+    &\textrm{A terra é plana}\\
+    &\textrm{A lua é feita de queijo}
+    \end{aligned}
+    \right.$ \\ \\
+    $\iff$. Ambas são proposições. Não tem a mesma intensionalidade \\
+    
+    \item $\left\{
+    \begin{aligned}
+    &x^{2} + y^{2} \leq 0\\
+    &x=y=0
+    \end{aligned}
+    \right.$ \\ \\
+    $\iff$. Ambas são proposições. Não tem a mesma intensionalidade. \\
+
+    \item $\left\{
+    \begin{aligned}
+    &x^{2} + y^{2} \leq 0\\
+    &0 \geq x \times x + y \times y
+    \end{aligned}
+    \right.$ \\ \\
+    $\iff$. Ambas são proposições. Apesar de $x \times x$ ser a definição de $x^{2}$, eu acredito que cai no mesmo caso que a segunda alternativa, por causa da mudança no operador (do $\leq$ para $\geq$) \\
+
+    \item $\left\{
+    \begin{aligned}
+    &(x^{2} + y^{2})^{2} \\
+    &(x \times x + y \times y) \times (x \times x + y \times y)
+    \end{aligned}
+    \right.$ \\ \\
+    $\equiv$. São objetos(números). Veja que $x \times x$ é simplesmente a definição de $x^{2}$, e ambos intencionam a mesma coisa. \\
+
+\end{enumerate}
+
+\noindent \textbf{EXERCÍCIO x1.7 (typecheck warmup). \\
+Considere as expressões abaixo. Para cada uma decida se ela denota objeto ou proposição.}
+
+\begin{enumerate}[(a)]
+    \item $(x + y)^{2} = x^{2} + 2xy$ \textcolor{red}{$\rightarrow$ é uma proposição, pois tem "verbo".}
+    \item a mãe de $p$ \textcolor{red}{$\rightarrow$ É um objeto, pois denota um indivíduo e não tem "verbo".}
+    \item $2^{n} + 1$ \textcolor{red}{$\rightarrow$ É um objeto, pois denota um número e não tem "verbo".}
+    \item $p$ é irmão de $q$ \textcolor{red}{$\rightarrow$ Proposição.}
+    \item a capital do país $p$ \textcolor{red}{$\rightarrow$ Objeto.}
+    \item $a$ mora em Atenas \textcolor{red}{$\rightarrow$ Proposição.} \\
+\end{enumerate}
+
+\noindent \textbf{EXERCÍCIO x1.8. \\
+Para cada uma das cinco expressões do 1.35: objeto ou proposição?}
+\begin{enumerate}[(a)]
+    \item existe $k \in \mathbb{Z}$ tal que $13 = 2k + 1$ \textcolor{red}{$\rightarrow$ Proposição, por conta do verbo "existe".}
+    \item existem números $x,y$ tais que $(x+y)^{2} = x^{2}+2xy$ \textcolor{red}{$\rightarrow$ Proposição.}
+    \item aquela função que dada um número $x$ retorna o $x+1$ \textcolor{red}{$\rightarrow$ A sentença define uma função. Resta saber se uma função é um objeto ou uma proposição. Eu imagino que seja um objeto.}
+    \item o conjunto de todos livros $b$ tais que existe palavra $w$ no $b$ com tantas letras quantas as letras do título de $b$ \textcolor{red}{$\rightarrow$ Objeto.}
+    \item para toda pessoa $p$, a pessoa $q$ não gosta de $p$. \textcolor{red}{$\rightarrow$ Proposição.} \\
+\end{enumerate}
+
+\noindent \textbf{EXERCÍCIO x1.9.
+Enuncie cada uma das $(1)-(4)$ do 1.35 sem pronunciar nenhuma das variáveis ligadas
+que aparecem. }
+\begin{enumerate}[(a)]
+    \item existe $k \in \mathbb{Z}$ tal que $13 = 2k + 1$ \textcolor{red}{$\rightarrow$ 13 é igual a duas vezes algum número inteiro mais um.}
+    \item existem números $x,y$ tais que $(x+y)^{2} = x^{2}+2xy$ \textcolor{red}{$\rightarrow$ O quadrado da soma de algum par de números é igual a soma do quadrado de um com duas vezes o produto dos dois.}
+    \item aquela função que dada um número $x$ retorna o $x+1$ \textcolor{red}{$\rightarrow$ Aquela função que retorna um número mais um.}
+    \item o conjunto de todos livros $b$ tais que existe palavra $w$ no $b$ com tantas letras quantas as letras do título de $b$ \textcolor{red}{$\rightarrow$ O conjunto dos livros que tem uma palavra com o mesmo número de letras que o seu título.}
+    \item para toda pessoa $p$, a pessoa $q$ não gosta de $p$. \textcolor{red}{$\rightarrow$ $q$ não gosta de ninguém.} \\
+\end{enumerate}
+
+\noindent \textbf{EXERCÍCIO x1.10. \\
+Mesma coisa sobre as frases seguintes:}
+
+\begin{enumerate}[(a)]
+    \item existem pessoas $p,q$ tais que $p$ ama $q$ e $q$ ama $p$ \textcolor{red}{$\rightarrow$ Existe um par de pessoas que se amam.}
+    \item existe pessoa $p$ tal que $p$ ama $q$ e $q$ ama $p$ \textcolor{red}{$\rightarrow$ $q$ ama e é amado por alguém.}
+    \item $x+y=z$ \textcolor{red}{$\rightarrow$ $x+y=z$, todas as variáveis são livres}
+    \item existe um número $x$ tal que $x + y = z$ \textcolor{red}{$\rightarrow$ $y$ somado a algum número é igual a $z$.}
+    \item existem números $x,z$ tais que $x + y = z$ \textcolor{red}{$\rightarrow$ $y$ somado a algum número é igual a algum outro número.}
+    \item para qualquer número $y$, existe um número $x$ tal que $x + y = z$ \textcolor{red}{$\rightarrow$ Para todo número, existe outro tal que a soma dos dois é igual a $z$}
+    \item para quaisquer números $y,z$, existe número $x$ tal que $x + y = z$ \textcolor{red}{$\rightarrow$ Para qualquer par de números, existe um valor tal que o primeiro número do par somado a ele é igual ao segundo.}
+\end{enumerate}
+
+\noindent \textbf{EXERCÍCIO x1.11. \\
+Desenha as ligações da $(3)$ e $(5)$ do Exemplo 1.47.} \\ \\
+%
+$(3)$ existe \tikz[baseline=(node1.base)]\node (node1)  {$\bullet$};  tal que \tikz[baseline=(node2.base)]\node (node2) {$\bullet$}; $-~d$ e \tikz[baseline=(node3.base)]\node (node3) {$\bullet$}; $+~d$ são primos. 
+%
+\begin{tikzpicture}[overlay]
+    \draw[-latex] (node1.south) to[bend right] (node2.south);
+    \draw[-latex] (node1.south) to[bend right] (node3.south);
+\end{tikzpicture} \\ \\
+%
+Existe \tikz[baseline=(node1.base)]\node (node1)  {$\bullet$}; tal que para todo \tikz[baseline=(node3.base)]\node (node3)  {\textcolor{red}{$\bullet$}}; , se \tikz[baseline=(node4.base)]\node (node4)  {\textcolor{red}{$\bullet$}}; $\geq$ \tikz[baseline=(node2.base)]\node (node2)  {$\bullet$};, então existe \tikz[baseline=(node7.base)]\node (node7)  {\textcolor{blue}{$\bullet$}}; tal que \tikz[baseline=(node5.base)]\node (node5)  {\textcolor{red}{$\bullet$}}; - \tikz[baseline=(node8.base)]\node (node8)  {\textcolor{blue}{$\bullet$}}; e \tikz[baseline=(node6.base)]\node (node6)  {\textcolor{red}{$\bullet$}}; + \tikz[baseline=(node9.base)]\node (node9)  {\textcolor{blue}{$\bullet$}}; são primos 
+%
+\begin{tikzpicture}[overlay]
+    \draw[-latex] (node1.south) to[bend right] (node2.south);
+    \draw[-latex][red] (node3.south) to[bend right] (node4.south);
+    \draw[-latex][red] (node3.south) to[bend right] (node5.south);
+    \draw[-latex][red] (node3.south) to[bend right] (node6.south);
+    \draw[-latex][blue] (node7.south) to[bend right] (node8.south);
+    \draw[-latex][blue] (node7.south) to[bend right] (node9.south);
+\end{tikzpicture}
+\vspace{2cm}
+
+\noindent \textbf{EXERCÍCIO x1.12 \\
+Já encontramos dois ligadores $\ll$existe \_\_ tal que . . .$\gg$ e  $\ll$para todo \_\_, . . .  $\gg$. Dê mais
+exemplos de ligadores que tu conhece: de matemática, de programação, de vida. . . } \\ \\
+Eu penso em: Para todo\_\_, todos os\_\_, dado um\_\_ e seja\_\_. \\
+
+\noindent \textbf{EXERCÍCIO x1.13. \\
+Na $(3)$ do Exemplo 1.47 podemos renomiar a variável. . . :}
+\begin{enumerate}[(i)]
+    \item $'n'$ por $'m'$? \textcolor{red}{$\rightarrow$ Sim! $n$ é uma variável ligada.}
+    \item $'n'$ por $'d'$? \textcolor{red}{$\rightarrow$ Não. O texto ficaria ambíguo.}
+    \item $'d'$ por $'x'$? \textcolor{red}{$\rightarrow$ Não. $d$ é uma variável livre.}
+\end{enumerate}
+
+\noindent \textbf{Na (5) do Exemplo 1.47 podemos renomiar a variável. . . :} \\ \\
+Poderíamos renomear todas as variáveis, pois são ligadas. Mas veja, se já temos uma variável chamada $N$, não faz sentido tentar dar o mesmo nome de $N$ a outra coisa.
+
+\end{document}
+
+% ANOTAÇÕES
+
+% \\ ou \newline -> quebra de linha
+% \vspace{1cm} -> espaçamento vertical
+% \hspace{1cm} -> espaçamento horizontal
+% ~ -> equivalente a um espaço
+% caracteres especiais -> \# \$ \& \_ \{ \} \textbackslash \textasciitilde
+% LaTeX table generator
