@@ -261,7 +261,139 @@ Na $(3)$ do Exemplo 1.47 podemos renomiar a variável. . . :}
 \end{enumerate}
 
 \noindent \textbf{Na (5) do Exemplo 1.47 podemos renomiar a variável. . . :} \\ \\
-Poderíamos renomear todas as variáveis, pois são ligadas. Mas veja, se já temos uma variável chamada $N$, não faz sentido tentar dar o mesmo nome de $N$ a outra coisa.
+Poderíamos renomear todas as variáveis, pois são ligadas. Mas veja, se já temos uma variável chamada $N$, não faz sentido tentar dar o mesmo nome de $N$ a outra coisa. \\
+
+\noindent \textbf{EXERCÍCIO x1.14 \\
+Quais são esses $x \in P$ tais que sister($x$) não é determinado? Cuidado: tem mais que umacategoria de $x$'s “problemáticos”!} \\ \\
+Bom, podemos supor uma pessoa (um person) que não tem irmã. Nesse caso, se tentássemos aplicar essa pessoa na função f, não teríamos o que retornar e sister seria indeterminado. \\ \\
+Ou uma pessoa que tem mais de uma irmã. Nesse outro caso teríamos que retornar mais de um objeto para uma única entrada da função. \\ \\
+Ou, ainda, uma pessoa que tenha uma irmã que não é da classe person, novamente não teríamos o que retornar. \\ \\
+A função só seria valída se pudéssemos assumir que todas as pessoas tem uma única irmã. \\ \\
+
+\noindent \textbf{EXERCÍCIO x1.15. \\
+Defina o que significa ser parallelas} \\ \\
+Retas são paralelas quando não dividem nenhum ponto entre si.\\ \\
+Segmentos de retas são paralelos quando as retas das quais eles fazem parte são paralelas. \\ \\
+
+\noindent \textbf{EXERCÍCIO x1.16. \\
+Sejam $a, b, c$ números naturais. Usando $=$ para igualdade semântica e $\equiv$ para igualdade
+sintáctica, decida para cada uma das afirmações seguintes se é verdadeira ou falsa:}
+
+\begin{enumerate}[($i$)]
+    \item $a + b + c \equiv a + (b + c)$ \textcolor{red}{$\rightarrow$ falso.}
+    \item $a + b + c \equiv (a + b) + c$ \textcolor{red}{$\rightarrow$ verdadeiro.}
+    \item $a + b + c = a + (b + c)$ \textcolor{red}{$\rightarrow$ verdadeiro.}
+    \item $a + b + c = (a + b) + c$ \textcolor{red}{$\rightarrow$ verdadeiro.}
+    \item $2 \cdot 0 + 3 = 0 + 3$ \textcolor{red}{$\rightarrow$ verdadeiro.}
+    \item $2 \cdot 0 + 3 \equiv 0 + 3$ \textcolor{red}{$\rightarrow$ falso.}
+    \item $(2 \cdot 0) + 3 \equiv 1 + 1 + 1$ \textcolor{red}{$\rightarrow$ falso.}
+    \item $2 \cdot 0 + 3 \equiv 1 + 1 + 1$ \textcolor{red}{$\rightarrow$ falso.}
+    \item $2 \cdot 0 + 3 \equiv 2 \cdot (0 + 3)$ \textcolor{red}{$\rightarrow$ falso.}
+    \item $2 \cdot 0 + 3 = 2 \cdot (0 + 3)$ \textcolor{red}{$\rightarrow$ falso.}
+    \item $2 \cdot 0 + 3 \equiv (2 \cdot 0) + 3$ \textcolor{red}{$\rightarrow$ verdadeiro.}
+    \item $1 + 2 \equiv 2 + 1$ \textcolor{red}{$\rightarrow$ falso.}
+\end{enumerate}
+
+\noindent \textbf{EXERCÍCIO x1.17. \\
+Verdade ou falso?: $A \equiv B \implies A = B$
+} \\ \\
+Verdade. \\ \\
+
+\noindent \textbf{EXERCÍCIO x1.18. \\
+Tente gerar a expressão
+$(1 + 5) \cdot 2$
+usando a Gramática 4.75.} \\ \\
+\begin{align*}
+    \langle ArEx \rangle &\stackrel{(0)}{\rightsquigarrow} \langle OpEx \rangle \\
+    &\stackrel{(2)}{\rightsquigarrow} 
+    ( \langle ArEx \rangle
+    \langle BinOp \rangle
+    \langle ArEx \rangle ) \\
+    &\stackrel{(0)}{\rightsquigarrow} 
+   ( \langle OpEx \rangle
+    \langle BinOp \rangle
+    \langle Num \rangle
+    ) \\
+    &\stackrel{(2)}{\rightsquigarrow} 
+    ( ( \langle ArEx \rangle
+    \langle BinOp \rangle
+    \langle ArEx \rangle )
+    \langle BinOp \rangle
+    \langle Num \rangle
+    ) \\
+    &\stackrel{(1)}{\rightsquigarrow} 
+    ( ( \langle Num \rangle
+    \langle BinOp \rangle
+    \langle Num \rangle )
+    \langle BinOp \rangle
+    \langle Num \rangle
+    ) \\
+    &\stackrel{(3)}{\rightsquigarrow} 
+    ( ( \langle Num \rangle
+    +
+    \langle Num \rangle )
+    \cdot
+    \langle Num \rangle
+    ) \\
+    &\stackrel{(1)}{\rightsquigarrow} 
+    ( (1+5)\cdot 2) \equiv (1+5)\cdot 2
+\end{align*}
+
+\noindent \textbf{EXERCÍCIO x1.19. \\
+Mostre como um while loop pode ser implementado como açúcar sintáctico numa linguagem que tem for loops mas não while loops, e vice versa.} \\ \\
+\begin{enumerate}
+    \item De for para while:
+
+    \begin{verbatim}
+    for (;;){
+        if (condicao){
+            break;
+        }
+
+        // CÓDIGO
+    }
+    \end{verbatim}
+    \textcolor{red}{A ideia principal é montar o um for loop que roda indefinidamente, até que o ciclo seja quebrado quando a condição for cumprida.}
+
+    \item De while para for:
+    
+    \begin{verbatim}
+    int contador;
+
+    while(1){
+        if (contador satisfaz condição){
+            break;
+        }
+
+        (o que acontece com o contador a cada iteração)
+
+        \\ CÓDIGO
+    }
+    \end{verbatim}
+
+    \textcolor{red}{De novo a ideia é criar um loop infinito que quebra somente quando a condição é satisfeita. Mas, dessa vez, com uma variável chamada contador que é incrementada ou decrementada (ou sofre qualquer outra alteração, inclusive nenhuma alteração) a cada iteração do loop.}
+        
+\end{enumerate}
+\vspace{1cm}
+\noindent \textbf{EXERCÍCIO x1.20
+Mostre como um for loop no estilo da linguagem C pode ser implementado sem usar
+nenhum dos loops disponíveis em C (for, while, do-while).}
+Eu faria algo assim:
+\begin{verbatim}
+int for_loop(int:contador, prop condicao, cmd operacao){
+    \\ CÓDIGO
+
+    if(condicao){
+        return 0;
+    }
+
+    operacao;
+
+    for_loop(contador, condicao, operacao);
+}
+\end{verbatim}
+\textcolor{red}{Usar recursão foi a única forma que eu encontrei de rodar essas linhas de código em loop (já que foi proíbido usar goto :/). O único problema que eu encontrei para fazer esse código rodar em C exatamente igual a um for loop é uma forma de passar uma proposição (como contador $\leq$ 0) como argumento da função.}
+
 
 \end{document}
 
