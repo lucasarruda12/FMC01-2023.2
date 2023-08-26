@@ -1,0 +1,146 @@
+\documentclass[a4paper, 12pt]{article}
+
+% PACOTES
+\usepackage[utf8]{inputenc} % Caracteres em geral
+\usepackage[brazilian]{babel} % Idioma da página
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry} % margens
+\usepackage{fancyhdr} % Cabeçalho
+\usepackage{ulem} % Destacar, sublinhar, riscar e etc...
+\usepackage{graphicx} % Figuras
+\usepackage{booktabs} % Tabelas
+\usepackage{multicol} % Multicolunas para tabelas
+\usepackage{multirow} % Multilinhas para tabelas
+\usepackage{colortbl} % Colorir tabelas
+\usepackage[table]{xcolor} % Para usar !25 !50 !75 nas cores
+\usepackage{float} % Para manter as tabelas no canto certo
+\usepackage{amsmath} % Matrizes
+\usepackage{hyperref} % Hyperlinks
+\usepackage{tikz} % TikZ - Desenhos e Gráficos
+\usepackage{amsmath,amssymb} % Mais símbolos matemáticos
+\usepackage[shortlabels]{enumitem} % Usar letras no enumerate
+
+% PREÂMBULOS
+\pagenumbering{Roman}
+\tikzstyle{every picture}+=[remember picture,inner xsep=0,inner ysep=0.25ex]
+
+% INÍCIO DO DOCUMENTO
+\begin{document}
+
+\section{HOMEWORK}
+\subsection{2023-08-16}
+\textbf{1. Para cada um dos $ \neg , \implies , \& , ou , \iff , \forall , \exists, =$ pense como que pode ser usado (sendo nos DADOS) ou atacado (sendo no ALVO). Escreva os comandos correspondentes e para cada um deles, esclareça: qual é o efeito no tabuleiro da demonstração (tanto na parte dos DADOS quanto no ALVO), como e quando é que tal comando pode ser executado.}
+\begin{enumerate}[($i$)]
+    \item Negação ($\neg$) \\ \\
+    \item implica ($\implies$) \\ \\
+    \textbf{Como alvo:} Se o nosso alvo é demonstrar que \textcolor{red}{$a$} $\implies$ \textcolor{red}{$b$}, o mínimo que podemos fazer é solicitar \textcolor{red}{$a$}. Concordamos em sala que o comando usado para fazer isso seria "suponha \textcolor{red}{$a$}". Esse comando teria o efeito de adicionar \textcolor{red}{$a$} aos nossos dados e reduzir o alvo apenas a \textcolor{red}{$b$}. \\ \\
+    \textbf{Como dado:}
+    Podemos aproveitar a implicação \textcolor{red}{$a$} $\implies$ \textcolor{red}{$b$} como uma "maquininha" que "transforma" \textcolor{red}{$a$}'s em \textcolor{red}{$b$}'s. Concordamos em sala que faríamos isso através do comando "aplique \textcolor{red}{$a$} $\implies$ \textcolor{red}{$b$} em \textcolor{red}{$a$}".
+    \item E ($\&$) \\ \\
+    \textbf{Como alvo:} 
+    Para demontrar \textcolor{red}{$a$} $\&$ \textcolor{red}{$b$}, teríamos que demonstrar \textcolor{red}{$a$} e demonstrar \textcolor{red}{$b$}. Concordamos em sala que o comando para fazer isso seria o "split". Esse comando teria o efeito de dividir o "tabuleiro"~do "jogo"~em dois, cada um com um dos dois elementos que compõem a conjunção como alvo. \\ \\
+    \textbf{Como dado:}
+    Se temos \textcolor{red}{$a$} $\&$ \textcolor{red}{$b$} nos nossos dados, poderemos usar tanto \textcolor{red}{$a$} quanto \textcolor{red}{$b$}. Concordamos em sala que os comandos para extrair cada um dos dois lados da implicação seriam "ext-l" e "ext-r" e eles teriam o efeito de adicionar um desses lados aos nossos dados.
+    \item ou ($ou$) \\ \\
+    \textbf{Como alvo:} Se o nosso objetivo é demonstrar uma disjunção \textcolor{red}{$a~ou~b$}, podemos escolher demonstrar \textcolor{red}{$a$} ou \textcolor{red}{$b$}, de acordo com o que for mais conveniente. Concordamos em sala que faríamos isso através dos comandos "escolha l de \textcolor{red}{$a~ou~b$}" e "escolha r de \textcolor{red}{$a~ou~b$}". \\ \\
+    \textbf{Como dado:} Com a disjunção \textcolor{red}{$a~ou~b$} nos nossos dados, teremos que mostrar que é possível chegar no nosso alvo tanto por \textcolor{red}{$a$} quanto por \textcolor{red}{$b$}. Concordamos em sala que usaríamos o comando "separe em casos a partir de \textcolor{red}{$a~ou~b$}".
+    \item Se, e somente se ($\iff$) \\ \\
+    a expressão \textcolor{red}{$a$}$\iff$\textcolor{red}{$b$} é um açucar sintático da expressão (\textcolor{red}{$a$}$\implies$\textcolor{red}{$b$}) $\&$ (\textcolor{red}{$a$}$\impliedby$\textcolor{red}{$b$}), e devemos tratá-la como tal.
+    \item Para todo ($\forall$) \\ \\
+    \item Existe ($\exists$) \\ \\
+    \item Igual ($=$) \\
+\end{enumerate}
+
+\noindent \textbf{4. Para cada uma das proposições seguintes tente demonstrar escrevendo na linguagem de demonstrações que elaboramos nas aulas até agora. Se colar em algum sem conseguir fechar, mostre teu progresso no zulip e peça ajuda; enquanto isso, continua para a próxima!}
+\begin{enumerate}
+    \item Proposições de dupla negaço:
+    \begin{enumerate}
+        \item   $P \implies \neg \neg P$
+        \begin{table}[h!]
+            \centering
+             \begin{tabular}{|c | c | c |} 
+             Demonstração & Dados & Alvo \\
+              &  & $P \implies \neg \neg P$ \\
+              Suponha $P$ & $P$ & $\neg \neg P$  \\
+              Suponha $\neg P$ & $P$, $P \implies \perp$ & $\perp$ \\
+              Aplique $\neg P$ em $P$ para inferir $\perp$ & $P$, $P \implies \perp$, $\perp$ & $\perp$ \\
+              Contradição & & \\
+             \end{tabular}
+        \end{table}
+        \item $\neg\neg P \implies P$
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{|c | c | c |} 
+            Demonstração & Dados & Alvo \\
+            & & $\neg\neg P \implies P$ \\
+            \hline
+            Vou demonstrar $\neg \neg P$ & & $\neg \neg P$ \\
+            Suponha $\neg P$ & $\neg P$ & $\perp$ \\
+            \end{tabular}
+        \end{table}
+    \end{enumerate}
+    \item Comutatividade dos $\lor ,\land$
+    \begin{enumerate}
+        \item $(P \lor Q) \implies (Q \lor P)$
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{|c | c | c |} 
+            Demonstração & Dados & Alvo \\
+            & & $(P \lor Q) \implies (Q \lor P)$ \\
+            Suponha $P \lor Q$ & $P \lor Q$ & $Q \lor P$ \\
+            Separe em casos $P \lor Q$ & $P \lor Q$ & $Q \lor P$ \\
+            \hline
+            Caso $P$: && \\
+            Escolha-R de $Q \lor P$  & $P$ & $P$ \\
+            Imediado & & \\
+            \hline
+            Caso $Q$: && \\
+            Escolha-L de $Q \lor P$  & $Q$ & $Q$ \\
+            Imediado & & \\
+            \end{tabular}
+        \end{table}
+        \item $(P \land Q) \implies (Q \land P)$
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{|c | c | c |} 
+            Demonstração & Dados & Alvo \\
+            & & $(P \land Q) \implies (Q \land P)$\\
+            Suponha $P \land Q$ & $P \land Q$ & $Q \land P$\\
+            Split & $P \land Q$ & $Q \land P$ \\
+            \hline
+            Alvo P: & & \\
+            EXT-L de $P \land Q$ & P & P \\
+            Imediato & & \\
+            \hline
+            Alvo Q: & & \\
+            EXT-R de $P \land Q$ & Q & Q \\
+            Imediato & & 
+            \end{tabular}
+        \end{table}
+    \end{enumerate}
+    \newpage
+    \item Proposições de interdefinabilidade dos $\implies \lor$
+    \begin{enumerate}
+        \item $(P \implies Q) \implies (\neg P \lor Q)$
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{|c | c | c |} 
+            Demonstração & Dados & Alvo \\
+            & & $(P \implies Q) \implies (\neg P \lor Q)$ \\
+            Suponha $P \implies Q$ & $P \implies Q$ & $\neg P \lor Q$ \\
+            Escolha R & $P \implies Q$ & $Q$ \\
+            \end{tabular}
+        \end{table}
+    \end{enumerate}
+\end{enumerate}
+
+
+\end{document}
+
+% ANOTAÇÕES
+
+% \\ ou \newline -> quebra de linha
+% \vspace{1cm} -> espaçamento vertical
+% \hspace{1cm} -> espaçamento horizontal
+% ~ -> equivalente a um espaço
+% caracteres especiais -> \# \$ \& \_ \{ \} \textbackslash \textasciitilde
+% LaTeX table generator
