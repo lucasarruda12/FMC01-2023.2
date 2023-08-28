@@ -53,37 +53,47 @@
 \noindent \textbf{4. Para cada uma das proposições seguintes tente demonstrar escrevendo na linguagem de demonstrações que elaboramos nas aulas até agora. Se colar em algum sem conseguir fechar, mostre teu progresso no zulip e peça ajuda; enquanto isso, continua para a próxima!}
 \begin{enumerate}
     \item Proposições de dupla negaço:
-    \begin{enumerate}
+    \begin{enumerate}[1.]
         \item   $P \implies \neg \neg P$
         \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
             \centering
-             \begin{tabular}{|c | c | c |} 
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
              Demonstração & Dados & Alvo \\
               &  & $P \implies \neg \neg P$ \\
               Suponha $P$ & $P$ & $\neg \neg P$  \\
               Suponha $\neg P$ & $P$, $P \implies \perp$ & $\perp$ \\
               Aplique $\neg P$ em $P$ para inferir $\perp$ & $P$, $P \implies \perp$, $\perp$ & $\perp$ \\
               Contradição & & \\
+              \hline
              \end{tabular}
         \end{table}
         \item $\neg\neg P \implies P$
         \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
             \centering
-            \begin{tabular}{|c | c | c |} 
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
             Demonstração & Dados & Alvo \\
             & & $\neg\neg P \implies P$ \\
             \hline
             Vou demonstrar $\neg \neg P$ & & $\neg \neg P$ \\
             Suponha $\neg P$ & $\neg P$ & $\perp$ \\
+            \textcolor{red}{(DEAD END)} & & \\
+            \hline
             \end{tabular}
-        \end{table}
+        \end{table} \\
+        \textcolor{red}{$\rightarrow$ Não consegui demonstrar a proposição com as ferramentas estudadas até o momento.}
     \end{enumerate}
     \item Comutatividade dos $\lor ,\land$
-    \begin{enumerate}
+    \begin{enumerate}[1.]
         \item $(P \lor Q) \implies (Q \lor P)$
         \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
             \centering
-            \begin{tabular}{|c | c | c |} 
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
             Demonstração & Dados & Alvo \\
             & & $(P \lor Q) \implies (Q \lor P)$ \\
             Suponha $P \lor Q$ & $P \lor Q$ & $Q \lor P$ \\
@@ -96,12 +106,17 @@
             Caso $Q$: && \\
             Escolha-L de $Q \lor P$  & $Q$ & $Q$ \\
             Imediado & & \\
+            \hline
             \end{tabular}
         \end{table}
+
+        \newpage
         \item $(P \land Q) \implies (Q \land P)$
         \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
             \centering
-            \begin{tabular}{|c | c | c |} 
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
             Demonstração & Dados & Alvo \\
             & & $(P \land Q) \implies (Q \land P)$\\
             Suponha $P \land Q$ & $P \land Q$ & $Q \land P$\\
@@ -113,21 +128,229 @@
             \hline
             Alvo Q: & & \\
             EXT-R de $P \land Q$ & Q & Q \\
-            Imediato & & 
+            Imediato & & \\
+            \hline
             \end{tabular}
         \end{table}
     \end{enumerate}
-    \newpage
-    \item Proposições de interdefinabilidade dos $\implies \lor$
-    \begin{enumerate}
+
+    \item Proposições de interdefinabilidade dos $\implies$, $\lor$
+    \begin{enumerate}[1.]
         \item $(P \implies Q) \implies (\neg P \lor Q)$
         \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
             \centering
-            \begin{tabular}{|c | c | c |} 
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
             Demonstração & Dados & Alvo \\
             & & $(P \implies Q) \implies (\neg P \lor Q)$ \\
             Suponha $P \implies Q$ & $P \implies Q$ & $\neg P \lor Q$ \\
-            Escolha R & $P \implies Q$ & $Q$ \\
+            \hline
+            \textcolor{red}{Escolha-R}  & \textcolor{red}{$P \implies Q$} & \textcolor{red}{$Q$} \\
+            \textcolor{red}{(DEAD-END)} & & \\
+            \hline
+            \textcolor{red}{Escolha-L}  & \textcolor{red}{$P \implies Q$} & \textcolor{red}{$\neg P$} \\
+            \textcolor{red}{Suponha $P$} & \textcolor{red}{$P \implies Q$, $P$} & \textcolor{red}{$\perp$} \\
+            \textcolor{red}{Aplique $P \implies Q$ em $P$ para inferir $Q$} & \textcolor{red}{$P \implies Q$, $P$, $Q$} & \textcolor{red}{$\perp$} \\
+            \textcolor{red}{(DEAD-END)} & & \\
+            \hline
+            \end{tabular}
+        \end{table}
+
+        \textcolor{red}{$\rightarrow$ Não consegui demonstrar a proposição com as ferramentas estudadas até o momento.}
+
+        \item $(P \implies Q) \impliedby (\neg P \lor Q)$
+        \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
+            \centering
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            & & $(\neg P \lor Q) \implies (P \implies Q)$ \\
+            Suponha $\neg P \lor Q$ & $\neg P \lor Q$ & $P \implies Q$\\
+            Suponha $P$ & $\neg P \lor Q$, $P$ & $Q$\\
+            Separe em casos a partir de $\neg P \lor Q$ & $\neg P \lor Q$, $P$ & $Q$\\
+            \hline
+            Caso $\neg P$: & & \\
+            Aplique $\neg P$ em P para inferir $\perp$ & $\neg P$, $P$, $\perp$ & Q\\
+            Contradição & & \\
+            \hline
+            Caso $Q$ & & \\
+            Imediato & $Q$, $P$ & Q \\
+            \hline
+            \end{tabular}
+        \end{table}
+
+        \newpage
+        \item $(P \lor Q) \implies (\neg P \implies Q)$
+        \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
+            \centering
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            & & $(P \lor Q) \implies (\neg P \implies Q)$ \\
+            Suponha $P \lor Q$ & $P \lor Q$ & $\neg P \implies Q$\\
+            Suponha $\neg P$ & $P \lor Q$, $\neg P$ & $Q$ \\
+            Separe em casos a partir de $P \lor Q$ & $P \lor Q$, $\neg P$ & $Q$\\
+            \hline
+            caso P: & & \\
+            Aplique $\neg P$ em $P$ para inferir $\perp$ & $\neg P$, $P$, $\perp$ & $Q$\\
+            Contradição & & \\
+            \hline
+            Caso Q: & & \\
+            Imediato & $Q$, $\neg P$ & $Q$\\
+            \hline
+            \end{tabular}
+        \end{table}
+
+        \item $(P \lor Q) \impliedby (\neg P \implies Q)$
+        \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
+            \centering
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            & & $(\neg P \implies Q) \implies (P \lor Q)$ \\
+            Suponha $\neg P \implies Q$ & $\neg P \implies Q$ & $P \lor Q$ \\
+            \hline
+            \textcolor{red}{Escolha-L} & \textcolor{red}{$\neg P \implies Q$} & \textcolor{red}{$P$}\\
+            \textcolor{red}{(DEAD END)} & & \\
+            \hline
+            \textcolor{red}{Escolha-R} & \textcolor{red}{$\neg P \implies Q$} & \textcolor{red}{$Q$}\\
+            \textcolor{red}{(DEAD END)} & & \\
+            \hline
+            \end{tabular}
+        \end{table}
+
+        \textcolor{red}{$\rightarrow$ Não consegui demonstrar a proposição com as ferramentas estudadas até o momento.}
+    \end{enumerate}
+
+    \item Proposições de contraposição
+    \begin{enumerate}[1.]
+        \item $(P \implies Q) \implies (\neg Q \implies \neg P)$
+        \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
+            \centering
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            & & $(P \implies Q) \implies (\neg Q \implies \neg P)$ \\
+            Suponha $P \implies Q$ & $P \implies Q$ & $\neg Q \implies \neg P$\\
+            Suponha $\neg Q$ & $P \implies Q$, $\neg Q$ & $\neg P$\\
+            Suponha P & $P \implies Q$, $\neg Q$, $P$ & $\perp$\\
+            Aplique $P \implies Q$ em $P$ para inferir $Q$ & $P \implies Q$, $\neg Q$, $P$, $Q$ & $\perp$\\
+            Aplique $\neg Q$ em $Q$ para inferir $\perp$ & $P \implies Q$, $\neg Q$, $P$, $Q$, $\perp$ & $\perp$\\
+            Contradição & & \\
+            \hline
+            \end{tabular}
+        \end{table}
+
+        \newpage
+        \item $(\neg Q \implies \neg P)\implies (P \implies Q)$
+        \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
+            \centering
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            & & $(\neg Q \implies \neg P)\implies (P \implies Q)$\\
+            Suponha $\neg Q \implies \neg P$ & $\neg Q \implies \neg P$ & $P \implies Q$\\
+            Suponha P & $\neg Q \implies \neg P$, $P$ & $Q$\\
+            \textcolor{red}{(DEAD END)} & & \\
+            \hline
+            \end{tabular}
+        \end{table}
+
+        \textcolor{red}{$\rightarrow$ Não consegui demonstrar a proposição com as ferramentas estudadas até o momento.}
+
+    \end{enumerate}
+
+    \item A irrefutabilidade do LEM
+    \begin{enumerate}[1.]
+        \item $\neg \neg (P \lor \neg P)$
+        \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
+            \centering
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            & & $((P \lor \neg P) \implies \perp) \implies \perp$\\
+            Suponha $(P \lor \neg P) \implies \perp$ & $(P \lor \neg P) \implies \perp$ & $\perp$ \\
+            \hline
+            \rowcolor{red!25}
+            Vou demonstrar $P \lor \neg P$ & $(P \lor \neg P) \implies \perp$ & $P \lor \neg P$ \\
+            \rowcolor{red!25}
+            Escolha-R & $(P \lor \neg P) \implies \perp$ & $\neg P$\\
+            \rowcolor{red!25}
+            Suponha P & $(P \lor \neg P) \implies \perp$, $P$ & $\perp$\\
+            \hline
+            \rowcolor{blue!25}
+            Vou demonstrar $P \lor \neg P$ & $(P \lor \neg P) \implies \perp$, $P$ & $P \lor \neg P$ \\
+            \rowcolor{blue!25}
+            Escolha-L & $(P \lor \neg P) \implies \perp$, $P$ & $P$\\
+            \rowcolor{blue!25}
+            Imediato & & \\
+            \hline
+            \rowcolor{red!25}
+            Aplique $P \lor \neg P \implies \perp$ em $P \lor \neg P$ para inferir $\perp$ & $(P \lor \neg P) \implies \perp$, $P$, $P \lor \neg P$, $\perp$ & $\perp$ \\
+            \rowcolor{red!25}
+            Contradição & &\\
+            \hline
+            Aplique $P \lor \neg P \implies \perp$ em $P \lor \neg P$ para inferir $\perp$ & $(P \lor \neg P) \implies \perp$, $\perp$ & $\perp$\\
+            Contradição & & \\
+            \hline
+            \end{tabular}
+        \end{table}
+    \end{enumerate}
+
+    \newpage
+    \item A lei de Peirce e sua versão "fraca"
+    \begin{enumerate}[1.]
+        \item $((P \implies Q) \implies P) \implies P$
+        \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
+            \centering
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            & & $((P \implies Q) \implies P) \implies P$\\
+            Suponha $(P \implies Q) \implies P$ & $(P \implies Q) \implies P$ & $P$\\
+            \hline
+            \rowcolor{red!25}
+            Vou demonstrar $P \implies Q$ & $(P \implies Q) \implies P$ & $P \implies Q$ \\
+            \rowcolor{red!25}
+            Suponha $P$  & $(P \implies Q) \implies P$, $P$ & $Q$ \\
+            \rowcolor{red!25}
+            \textcolor{red}{(DEAD END)} & & \\
+            \hline
+            \end{tabular}
+        \end{table}
+
+        \textcolor{red}{$\rightarrow$ Não consegui demonstrar a proposição com as ferramentas estudadas até o momento.}
+
+        \item $((P \implies Q) \implies P) \implies \neg\neg P$
+        \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
+            \centering
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            & & $((P \implies Q) \implies P) \implies \neg \neg P$\\
+            Suponha $(P \implies Q) \implies P$ & $(P \implies Q) \implies P$ & $\neg \neg P$\\
+            Suponha $\neg P$ & $(P \implies Q) \implies P$, $\neg P$ & $\perp$ \\
+            \rowcolor{red!25}
+            Vou demonstrar $P \implies Q$ & $(P \implies Q) \implies P$, $\neg P$ & $P \implies Q$\\
+            \rowcolor{red!25}
+            Suponha $P$ & $(P \implies Q) \implies P$, $\neg P$, $P$ & $Q$ \\
+            \rowcolor{red!25}
+            Aplique $\neg P$ em $P$ para inferir $\perp$ & $(P \implies Q) \implies P$, $\neg P$, $P$, $\perp$ & $Q$\\
+            \rowcolor{red!25}
+            Contradição & & \\
+            Aplique $(P \implies Q) \implies P$ em $P \implies Q$ para inferir $P$ & $(P \implies Q) \implies P$, $P \implies Q$, $P$, $\neg P$ & $\perp$\\
+            Aplique $\neg P$ em $P$ para inferir $\perp$ & $(P \implies Q) \implies P$, $P \implies Q$, $P$, $\neg P$, $\perp$ & $\perp$\\
+            Contradição & & \\
+            \hline
             \end{tabular}
         \end{table}
     \end{enumerate}
