@@ -27,7 +27,7 @@
 \begin{document}
 
 \section{HOMEWORK}
-\subsection{2023-08-16}
+\subsection{2023-08-21}
 \textbf{1. Para cada um dos $ \neg , \implies , \& , ou , \iff , \forall , \exists, =$ pense como que pode ser usado (sendo nos DADOS) ou atacado (sendo no ALVO). Escreva os comandos correspondentes e para cada um deles, esclareça: qual é o efeito no tabuleiro da demonstração (tanto na parte dos DADOS quanto no ALVO), como e quando é que tal comando pode ser executado.}
 \begin{enumerate}[($i$)]
     \item Negação ($\neg$) \\ \\
@@ -353,6 +353,182 @@
             \hline
             \end{tabular}
         \end{table}
+    \end{enumerate}
+
+    \newpage
+    \item Proposições de interdefinabilidade dos $\lor$, $\land$:
+    \begin{enumerate}[1.]
+        \item $P \lor Q \implies \neg (\neg P \land \neg Q)$
+        \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
+            \centering
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            && $P \lor Q \implies \neg (\neg P \land \neg Q)$\\
+            Suponha $P \lor Q$ &$P \lor Q$& $\neg (\neg P \land \neg Q)$ \\
+            Suponha $\neg P \land \neg Q$ & $P \lor Q$, $\neg P \land \neg Q$ & $\perp$\\
+            Separe em casos a partir de $P \lor Q$ & $P \lor Q$, $\neg P \land \neg Q$ & $\perp$\\
+            \hline
+            caso P: & &\\
+            Ext-L de $\neg P \land \neg Q$ & $P$, $\neg P \land \neg Q$, $\neg P$ & $\perp$\\
+            Aplique $\neg P$ em $P$ para inferir $\perp$ & $P$, $\neg P \land \neg Q$, $\neg P$, $\perp$ & $\perp$\\
+            Contradição&&\\
+            \hline
+            caso Q:&&\\
+            Ext-R de $\neg P \land \neg Q$ & $Q$, $\neg P \land \neg Q$, $\neg Q$ & $\perp$\\
+            Aplique $\neg Q$ em $Q$ para inferir $\perp$ & $Q$, $\neg P \land \neg Q$, $\neg Q$, $\perp$ & $\perp$\\
+            Contradição&&\\
+            \hline
+            \end{tabular}
+        \end{table}
+
+        \item $P \lor Q \impliedby \neg (\neg P \land \neg Q)$
+        \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
+            \centering
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            &&$\neg (\neg P \land \neg Q)\implies P \lor Q$\\
+            Suponha $\neg (\neg P \land \neg Q)$ & $\neg (\neg P \land \neg Q)$ & $P \lor Q$\\
+            \rowcolor{red!25}
+            Vou demonstrar $\neg P \land \neg Q$ & $\neg (\neg P \land \neg Q)$ & $\neg P \land \neg Q$\\
+            \rowcolor{red!25}
+            Split & $\neg (\neg P \land \neg Q)$ & $\neg P \land \neg Q$\\
+            \hline
+            \rowcolor{red!25}
+            ALVO $\neg P$: & & \\
+            \rowcolor{red!25}
+            Suponha P & $\neg (\neg P \land \neg Q)$, $P$ & $\perp$\\
+            \rowcolor{red!25}
+            \textcolor{red}{(DEAD END)} & & \\
+            \hline
+            \end{tabular}
+        \end{table}
+
+        \textcolor{red}{$\rightarrow$ Não consegui demonstrar a proposição com as ferramentas estudadas até o momento.}
+ 
+        \newpage
+        \item $P \land Q \implies \neg(\neg P \lor \neg Q)$
+        \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
+            \centering
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            & & $P \land Q \implies \neg(\neg P \lor \neg Q)$\\
+            Suponha $P \land Q$ & $P \land Q$ & $\neg (\neg P \lor \neg Q)$\\
+            Suponha $\neg P \lor \neg Q$ & $P \land Q$, $\neg P \lor \neg Q$ & $\perp$ \\
+            Separe em casos a partir $\neg P \lor \neg Q$ & $P \land Q$, $\neg P \lor \neg Q$ & $\perp$ \\
+            \hline
+            caso $\neg P$: & & \\
+            ext-L de $P \land Q$ & $P \land Q$, $\neg P$, $P$ & $\perp$ \\
+            Aplique $\neg P$ em $P$ para inferir $\perp$ & $P \land Q$, $\neg P$, $P$, $\perp$ & $\perp$ \\
+            Contradição & & \\
+            \hline
+            caso $\neg Q$: & & \\
+            ext-R de $P \land Q$ & $P \land Q$, $\neg Q$, $Q$ & $\perp$ \\
+            Aplique $\neg Q$ em $Q$ para inferir $\perp$ & $P \land Q$, $\neg Q$, $Q$, $\perp$ & $\perp$ \\
+            Contradição & & \\
+            \hline
+            \end{tabular}
+        \end{table}
+
+        \item $P \land Q \impliedby \neg(\neg P \lor \neg Q)$
+        \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
+            \centering
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            & & $ \neg(\neg P \lor \neg Q) \implies P \land Q$\\
+            Suponha $\neg(\neg P \lor \neg Q)$ & $\neg(\neg P \lor \neg Q)$ & $P \land Q$\\
+            \rowcolor{red!25}
+            Vou demonstrar $\neg P \lor \neg Q$ & $\neg(\neg P \lor \neg Q)$ &  $\neg P \lor \neg Q$\\
+            \rowcolor{red!25}
+            \hline 
+            Escolha-L & $\neg(\neg P \lor \neg Q)$ & $\neg P$ \\
+            \rowcolor{red!25}
+            Suponha $P$ & $\neg(\neg P \lor \neg Q)$, $P$ & $\perp$ \\
+            \rowcolor{red!25}
+            \textcolor{red}{(DEAD END)} & & \\
+            \hline
+            \rowcolor{red!25}
+            Escolha-R & $\neg(\neg P \lor \neg Q)$ & $\neg Q$\\
+            \rowcolor{red!25}
+            Suponha $Q$ & $\neg(\neg P \lor \neg Q)$, $Q$ & $\perp$ \\
+            \rowcolor{red!25}
+            \textcolor{red}{(DEAD END)} & & \\
+            \hline
+            \end{tabular}
+        \end{table}
+    \end{enumerate}
+
+    \newpage
+    \item As leis de DeMorgan para $\lor$, $\land$
+    \begin{enumerate}[1.]
+        \item $\neg (P \lor Q) \implies (\neg P \land \neg Q)$
+        \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
+            \centering
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            & & $\neg (P \lor Q) \implies (\neg P \land \neg Q)$\\
+            Suponha $\neg(P \lor Q)$ & $\neg(P \lor Q)$ & $\neg P \land \neg Q$\\
+            Split & & \\
+            \hline
+            ALVO $\neg Q$: & & \\
+            Suponha $Q$ & $\neg(P \lor Q)$, $Q$ & $\perp$ \\
+            \rowcolor{red!25}
+            Vou demonstrar $P \lor Q$ & $\neg(P \lor Q)$, $Q$ & $P \lor Q$ \\
+            \rowcolor{red!25}
+            Escolha-R & $\neg(P \lor Q)$, $Q$ & $Q$ \\
+            \rowcolor{red!25}
+            Imediato & & \\
+            Aplique $\neg (P \lor Q)$ em $P \lor Q$ para inferir $\perp$ & $\neg(P \lor Q)$, $Q$, $P \lor Q$, $\perp$ & $\perp$\\
+            Contradição & & \\
+            \hline
+            ALVO $\neg P$: & & \\
+            Suponha $P$ & $\neg (P \lor Q)$, $P$ & $\perp$\\
+            \rowcolor{red!25}
+            Vou demonstrar $P \lor Q$ & $\neg (P \lor Q)$, $P$ & $P \lor Q$ \\
+            \rowcolor{red!25}
+            Escolha-L & $\neg (P \lor Q)$, $P$ & $P$\\
+            \rowcolor{red!25}
+            Imediato & & \\
+            Aplique $\neg (P \lor Q)$ em $P \lor Q$ para inferir $\perp$ & $\neg (P \lor Q)$, $P$, $P \lor Q$, $\perp$ & $\perp$\\
+            Contradição & & \\
+            \hline
+            \end{tabular}
+        \end{table}
+
+        \item $\neg (P \lor Q) \impliedby (\neg P \land \neg Q)$
+        \begin{table}[h!]
+            \rowcolors{2}{gray!25}{white}
+            \centering
+            \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+            \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            & & $(\neg P \land \neg Q) \implies \neg (P \lor Q)$\\
+            Suponha $\neg P \land \neg Q$ & $\neg P \land \neg Q$ & $\neg(P \lor Q)$ \\
+            Suponha $P \lor Q$ & $\neg P \land \neg Q$, $P \lor Q$ & $\perp$ \\
+            Separe em casos a partir de $P \lor Q$ & $\neg P \land \neg Q$, $P \lor Q$ & $\perp$ \\
+            \hline
+            Caso P: & & \\
+            ext-L de $\neg P \land \neg Q$ & $\neg P \land \neg Q$, $\neg P$, $P$ & $\perp$ \\
+            Aplique $\neg P$ em $P$ para inferir $\perp$ & $\neg P \land \neg Q$, $\neg P$, $P$, $\perp$ & $\perp$ \\
+            Contradição & & \\
+            \hline
+            Caso Q: & & \\
+            ext-R de $\neg P \land \neg Q$ & $\neg P \land \neg Q$, $\neg Q$, $Q$ & $\perp$ \\
+            Aplique $\neg Q$ em $Q$ para inferir $\perp$ & $\neg P \land \neg Q$, $\neg Q$, $Q$, $\perp$ & $\perp$ \\
+            Contradição & & \\
+            \hline
+            \end{tabular}
+        \end{table}
+
     \end{enumerate}
 \end{enumerate}
 
