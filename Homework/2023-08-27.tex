@@ -1,0 +1,77 @@
+\documentclass[a4paper, 12pt]{article}
+
+% PACOTES
+\usepackage[utf8]{inputenc} % Caracteres em geral
+\usepackage[brazilian]{babel} % Idioma da página
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry} % margens
+\usepackage{fancyhdr} % Cabeçalho
+\usepackage{ulem} % Destacar, sublinhar, riscar e etc...
+\usepackage{graphicx} % Figuras
+\usepackage{booktabs} % Tabelas
+\usepackage{multicol} % Multicolunas para tabelas
+\usepackage{multirow} % Multilinhas para tabelas
+\usepackage{colortbl} % Colorir tabelas
+\usepackage[table]{xcolor} % Para usar !25 !50 !75 nas cores
+\usepackage{float} % Para manter as tabelas no canto certo
+\usepackage{amsmath} % Matrizes
+\usepackage{hyperref} % Hyperlinks
+\usepackage{tikz} % TikZ - Desenhos e Gráficos
+\usepackage{amsmath,amssymb} % Mais símbolos matemáticos
+\usepackage[shortlabels]{enumitem} % Usar letras no enumerate
+
+% PREÂMBULOS
+\pagenumbering{Roman}
+\tikzstyle{every picture}+=[remember picture,inner xsep=0,inner ysep=0.25ex]
+
+% INÍCIO DO DOCUMENTO
+\begin{document}
+
+\section{HOMEWORK}
+\subsection{2023-08-27}
+
+\textbf{1. Infira a simetria e a transitividade da igualdade a partir das reflexividade e substituição.}
+\begin{enumerate}[a.]
+    \item Simetria
+    \begin{table}[h!]
+        \rowcolors{2}{gray!25}{white}
+        \centering
+        \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+        \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            && $a = b \implies b = a$  \\
+            Suponha $a = b$ & $a = b$ & $b = a$\\
+            Substitua $a$ por $b$ no alvo usando $a = b$ & $a=b$&$b=b$\\
+            Substitua $a$ por $b$ em $a = b$ usando $a=b$ & $a=b$, $b=b$&$b=b$\\
+            Imediato &&\\
+            \hline
+            \end{tabular}
+    \end{table}
+
+    \item Transitividade
+    \begin{table}[h!]
+        \rowcolors{2}{gray!25}{white}
+        \centering
+        \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+        \rowcolor{gray!50}
+            Demonstração & Dados & Alvo \\
+            && $(a = b) \& (b = c) \implies (a = c)$  \\
+            Suponha $(a = b) \& (b =c)$ & $(a = b) \& (b =c)$ & $a=c$\\
+            ext-L de $(a = b) \& (b =c)$ & $(a = b) \& (b =c)$, $a=b$ & $a = c$\\
+            ext-R de $(a = b) \& (b =c)$ & $(a = b) \& (b =c)$, $a=b$, $b=c$ & $a=c$\\
+            Substitua $b$ por $c$ em $a=b$ & $(a = b) \& (b =c)$, $a=b$, $b=c$, $a=c$ & $a=c$\\
+            Imediato & & \\
+            \hline
+            \end{tabular}
+    \end{table}
+\end{enumerate}
+
+\end{document}
+
+% ANOTAÇÕES
+
+% \\ ou \newline -> quebra de linha
+% \vspace{1cm} -> espaçamento vertical
+% \hspace{1cm} -> espaçamento horizontal
+% ~ -> equivalente a um espaço
+% caracteres especiais -> \# \$ \& \_ \{ \} \textbackslash \textasciitilde
+% LaTeX table generator
