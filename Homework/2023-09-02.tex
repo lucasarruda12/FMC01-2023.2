@@ -1,0 +1,274 @@
+\documentclass[a4paper, 12pt]{article}
+
+% PACOTES
+\usepackage[utf8]{inputenc} % Caracteres em geral
+\usepackage[brazilian]{babel} % Idioma da página
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry} % margens
+\usepackage{fancyhdr} % Cabeçalho
+\usepackage{ulem} % Destacar, sublinhar, riscar e etc...
+\usepackage{graphicx} % Figuras
+\usepackage{booktabs} % Tabelas
+\usepackage{multicol} % Multicolunas para tabelas
+\usepackage{multirow} % Multilinhas para tabelas
+\usepackage{colortbl} % Colorir tabelas
+\usepackage[table]{xcolor} % Para usar !25 !50 !75 nas cores
+\usepackage{float} % Para manter as tabelas no canto certo
+\usepackage{amsmath} % Matrizes
+\usepackage{hyperref} % Hyperlinks
+\usepackage{tikz} % TikZ - Desenhos e Gráficos
+\usepackage{amsmath,amssymb} % Mais símbolos matemáticos
+\usepackage[shortlabels]{enumitem} % Usar letras no enumerate
+
+% PREÂMBULOS
+\newcounter{linhadem}
+\setcounter{linhadem}{0}
+
+\newenvironment{dem}
+{
+    \rowcolors{2}{gray!25}{white}
+    \centering
+    \begin{tabular}{p{0.3cm} |p{8cm} |}
+    \rowcolor{gray!50}
+     & Demonstração\\
+}
+{
+  \end{tabular}
+}
+
+\newenvironment{alvodados}
+{
+    \centering
+    \begin{tabular}{p{2.9cm} |p{2.9cm}}
+    Dados & Alvo\\
+    \hline
+}
+{
+  \end{tabular}
+  \setcounter{linhadem}{0}
+}
+
+\newcommand{\linha}[1]{%
+  \stepcounter{linhadem}
+  \thelinhadem & #1 \\
+}
+
+\newcommand{\cmnt}[2]{%
+  #1 & #2 \\
+}
+
+\pagenumbering{Roman}
+\tikzstyle{every picture}+=[remember picture,inner xsep=0,inner ysep=0.25ex]
+
+% INÍCIO DO DOCUMENTO
+\begin{document}
+
+\section{2023-09-02}
+
+\subsection*{Jogue o NNG. Tente completar o mais rápido possivel; sua entregá pode acabar sendo a Prova 2.2. Veja o FAQ relevante também.}
+
+\subsection*{Defina (sem consulta) a adição, a multiplicação, e a exponenciação.}
+%
+Adição ($\forall n:Nat$, $\forall m:Nat$ ):
+\begin{align*}
+    \text{Nat} \times \text{Nat} &\to \text{Nat}\\
+    n + O &= n \tag*{[a.1]}\\
+    n + Sm &= S(n + m) \tag*{[a.2]}
+\end{align*}
+%
+Multiplicação ($\forall n:Nat$, $\forall m:Nat$ ):
+\begin{align*}
+    \text{Nat} \times \text{Nat} &\to \text{Nat}\\
+    n \cdot O &= O \tag*{[m.1]}\\
+    n \cdot Sm &= n + n \cdot m \tag*{[m.2]}
+\end{align*}
+%
+Exponenciação ($\forall n:Nat$, $\forall m:Nat$ ):
+\begin{align*}
+    \text{Nat} \times \text{Nat} &\to \text{Nat}\\
+    n^O &= SO \tag*{[e.1]}\\
+    n^{Sm} &= n \cdot n^m \tag*{[e.2]}
+\end{align*}
+
+\subsection*{Defina uma função double que retorna o dobro da sua entrada.}
+%
+Double ($\forall n:Nat$):
+\begin{align*}
+    \text{Nat} &\to \text{Nat}\\
+    double(n) &= n + n \tag*{[d.1]}
+\end{align*}
+%
+\subsection*{Calcule os:}
+%
+\subsubsection*{$double(double(S O))$}
+%
+\begin{align*}
+    double(double(S O)) &= double(SO + SO) \tag*{[d.1; SO]}\\
+    &= double(S(SO + O)) \tag*{[a.2; SO, O]}\\
+    &= double(SSO) \tag*{[a.1; SO]}\\
+    &= SSO + SSO \tag*{[d.1; SSO]}\\
+    &= S(SSO + SO) \tag*{[a.2; SSO, SO]}\\
+    &= S(S(SSO + O)) \tag*{[a.2; SSO, O]}\\
+    &= SSSSO \tag*{[a.1; SSO]}\\
+\end{align*}
+%
+\subsubsection*{$double ((S O) + (S (S O)))$}
+%
+\begin{align*}
+    double ((S O) + (S (S O))) &= double(S(SO + SO)) \tag*{[a.2; SO, SO]}\\
+    &= double(S(S(SO + O))) \tag*{[a.2; SO, O]}\\
+    &= double(SSSO) \tag*{[a.1; SO]}\\
+    &= SSSO + SSSO \tag*{[d.1; SSSO]}\\
+    &= S(SSSO + SSO) \tag*{[a.2; SSSO, SSO]}\\
+    &= S(S(SSSO + SO)) \tag*{[a.2; SSSO, SO]}\\
+    &= S(S(S(SSSO + O))) \tag*{[a.2; SSSO, O]}\\
+    &= SSSSSSO \tag*{[a.1; SSSO]}
+\end{align*}
+%
+\subsection*{Demonstre uma das: (·)-idL, (·)-idR}
+%
+\begin{table}[H]
+    \begin{dem}
+    \end{dem}
+    \begin{alvodados}
+        \cmnt{}{$(\exists i)(\forall a)[a \cdot i = a]$}
+    \end{alvodados}
+\end{table}
+%
+\begin{table}[H]
+    \begin{dem}
+        \linha{escolha $SO$}
+    \end{dem}
+    \begin{alvodados}
+      \cmnt{$SO$}{$(\forall a)[a \cdot SO = a]$}
+    \end{alvodados}
+\end{table}
+%
+\begin{table}[H]
+    \begin{dem}
+        \linha{escolha $SO$}
+        \linha{seja $a$ Nat}
+    \end{dem}
+    \begin{alvodados}
+      \cmnt{$SO$}{$a \cdot SO = a$}
+      \cmnt{$a: Nat$}{}
+    \end{alvodados}
+\end{table}
+%
+\begin{table}[H]
+    \begin{dem}
+        \linha{escolha $SO$}
+        \linha{seja $a$ Nat}
+        \linha{calculamos:}
+    \end{dem}
+    \begin{alvodados}
+      \cmnt{$SO$}{$a \cdot SO = a$}
+      \cmnt{$a: Nat$}{}
+    \end{alvodados}
+\end{table}
+%
+\begin{align*}
+    a \cdot SO &= a + a \cdot O \tag*{[[m.2] a O]}\\
+    &= a + O \tag*{[[m.1] a]}\\
+    &= a \tag*{[[a,.1] a]}
+\end{align*}
+%
+\subsection*{Demonstre uma das: (\^{})-idL, (\^{})-idR}
+%
+\begin{table}[H]
+    \begin{dem}
+    \end{dem}
+    \begin{alvodados}
+        \cmnt{}{$(\exists i)(\forall a)[a ^i = a]$}
+    \end{alvodados}
+\end{table}
+%
+\begin{table}[H]
+    \begin{dem}
+        \linha{Escolha $SO$}
+    \end{dem}
+    \begin{alvodados}
+        \cmnt{$SO$}{$(\forall a)[a ^i = a]$}
+    \end{alvodados}
+\end{table}
+%
+\begin{table}[H]
+    \begin{dem}
+        \linha{Escolha $SO$}
+        \linha{Seja $a:Nat$}
+    \end{dem}
+    \begin{alvodados}
+        \cmnt{$SO$}{$a ^i = a$}
+        \cmnt{$a:Nat$}{}
+    \end{alvodados}
+\end{table}
+%
+\begin{table}[H]
+    \begin{dem}
+        \linha{Escolha $SO$}
+        \linha{Seja $a:Nat$}
+        \linha{Calculamos:}
+    \end{dem}
+    \begin{alvodados}
+        \cmnt{$SO$}{$a ^i = a$}
+        \cmnt{$a:Nat$}{}
+    \end{alvodados}
+\end{table}
+%
+\begin{align*}
+    a ^{SO} &= a \cdot a ^ O \tag*{[[e.2] a O]}\\
+    &= a \cdot SO \tag*{[[e.1] a]}\\
+    &= a + a \cdot O \tag*{[[m.2] a O]}\\
+    &= a + O \tag*{[[m.1] a]}\\
+    &= a \tag*{[[a.1] a]}
+\end{align*}
+%
+\subsection*{Defina a função pred : Nat → Nat de “predecessor”, onde consideramos que o predecessor de zero é o próprio zero mesmo: AVISO: a maioria das vezes que um aluno de 2022.1 e de 2022.2 usou a pred em outras definições, estava errando}
+%
+Pred ($\forall n:Nat$):
+\begin{align*}
+    Nat &\to Nat\\
+    pred(O) &= O \tag*{[pd.1]}\\
+    pred(Sn) &= n \tag*{[pd.2]}
+\end{align*}
+%
+\subsection*{Defina as funções:}
+%
+($\forall n:int$, $\forall m:int$):
+%
+\subsubsection*{fact : Nat $\to$ Nat}
+%
+\begin{align*}
+    Nat &\to Nat\\
+    O! &= SO\\
+    Sn! &= Sn \cdot n!
+\end{align*}
+%
+\subsubsection*{fib  : Nat $\to$ Nat}
+%
+\begin{align*}
+    Nat &\to Nat\\
+    fib(O) &= O\\
+    fib(SO) &= SO\\
+    fib(SSn) &= fib(Sn) + fib(n)
+\end{align*}
+%
+\subsubsection*{min  : Nat $\times$ Nat $\to$ Nat}
+%
+\begin{align*}
+    Nat \times Nat &\to Nat\\
+    min(n, O) &= O\\
+    min(O, n) &= O\\
+    min(Sn, Sm) &= S(min(n, m))
+\end{align*}
+%
+\subsubsection*{min  : Nat $\times$ Nat $\to$ Nat}
+%
+\begin{align*}
+    Nat \times Nat &\to Nat\\
+    max(n, O) &= n\\
+    max(O, n) &= n\\
+    max(Sn, Sm) &= S(max(n, m))
+\end{align*}
+%
+
+\end{document}

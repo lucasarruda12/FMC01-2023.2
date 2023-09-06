@@ -1,0 +1,70 @@
+\documentclass[a4paper, 12pt]{article}
+
+% PACOTES
+\usepackage[utf8]{inputenc} % Caracteres em geral
+\usepackage[brazilian]{babel} % Idioma da página
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry} % margens
+\usepackage{fancyhdr} % Cabeçalho
+\usepackage{ulem} % Destacar, sublinhar, riscar e etc...
+\usepackage{graphicx} % Figuras
+\usepackage{booktabs} % Tabelas
+\usepackage{multicol} % Multicolunas para tabelas
+\usepackage{multirow} % Multilinhas para tabelas
+\usepackage{colortbl} % Colorir tabelas
+\usepackage[table]{xcolor} % Para usar !25 !50 !75 nas cores
+\usepackage{float} % Para manter as tabelas no canto certo
+\usepackage{amsmath} % Matrizes
+\usepackage{hyperref} % Hyperlinks
+\usepackage{tikz} % TikZ - Desenhos e Gráficos
+\usepackage{amsmath,amssymb} % Mais símbolos matemáticos
+\usepackage[shortlabels]{enumitem} % Usar letras no enumerate
+
+% PREÂMBULOS
+\newcounter{linhadem}
+\setcounter{linhadem}{0}
+
+\newenvironment{dem}
+{
+    \rowcolors{2}{gray!25}{white}
+    \centering
+    \begin{tabular}{p{0.3cm} |p{8cm} |}
+    \rowcolor{gray!50}
+     & Demonstração\\
+}
+{
+  \end{tabular}
+}
+
+\newenvironment{alvodados}
+{
+    \centering
+    \begin{tabular}{p{2.9cm} |p{2.9cm}}
+    Dados & Alvo\\
+    \hline
+}
+{
+  \end{tabular}
+  \setcounter{linhadem}{0}
+}
+
+\newcommand{\linha}[1]{%
+  \stepcounter{linhadem}
+  \thelinhadem & #1 \\
+}
+
+\newcommand{\cmnt}[2]{%
+  #1 & #2 \\
+}
+
+\pagenumbering{Roman}
+\tikzstyle{every picture}+=[remember picture,inner xsep=0,inner ysep=0.25ex]
+
+% INÍCIO DO DOCUMENTO
+\begin{document}
+
+\section{2023-09-04}
+
+\subsection*{Capítulo 3: até Θ3.13}
+%
+
+\end{document}

@@ -532,6 +532,58 @@
     \end{enumerate}
 \end{enumerate}
 
+\newpage
+\noindent\textbf{Exercícios do FMCBook} \\ \\
+
+\noindent\textbf{EXERCÍCIO x2.1. \\
+Até agora encontramos como usar os $\exists$, $\land$ e como atacar os $\forall$, $\exists$, $\implies$. Para cada um dos
+conectivos que ainda não achamos como usar ou atacar, pense em: o que tu podes
+escrever na tua demonstração; o que efeito tem nos dados; e o que nos alvos.} \\ \\
+\textcolor{red}{Eu imagino que esse exercício está respondido na primeira questão desse documento.} \\ \\
+
+\noindent\textbf{EXERCÍCIO x2.2. \\
+Qual o problema no Exemplo 2.13?} \\ \\
+\textcolor{red}{$\rightarrow$ Eu sinceramente não encontrei nenhum problema com o exemplo 2.13} \\ \\
+
+\noindent\textbf{EXERCÍCIO x2.3. \\
+Ache o erro na demonstração abaixo e demonstre que a proposição é falsa! } \\ \\
+DEMONSTRAÇÃO ERRADA. Como \textcolor{red}{$a | m$, pela definição de $|$, existe $u \in \mathbb{Z}$ tal que $a = mu$}.
+Similarmente, como $b | m$, existe $v \in \mathbb{|}$ tal que $b = mv$. Multiplicando as duas equações
+por partes, temos $ab = (mu)(mv) = m(umv)$, e como $umv \in \mathbb{Z}$, $ab | m$. \\ \\
+O correto seria: pela definição de $|$, existe $u \in \mathbb{Z}$ tal que $m = au$. \\ \\
+Demonstração: Sejam $a, b, m \in \mathbb{Z}$. Se $a | m$ e $b | m$, então $\neg$($ab | m$).
+\begin{table}[h!]
+    \rowcolors{2}{gray!25}{white}
+    \centering
+    \begin{tabular}{|p{4cm} | p{4cm} | p{4cm} |}
+    \rowcolor{gray!50}
+    Demonstração & Dados & Alvo \\
+    & $a, b, m$ & ($a|m~\&~b|m) \implies \neg(ab | m)$ \\ 
+    Suponha $a|m~\&~b|m$& $a, b, m$, $a|m~\&~b|m$ & $\neg(ab|m)$ \\
+    ext-L de $a|m~\&~b|m$ & $a, b, m$, $a|m~\&~b|m$, $a|m$ & $\neg(ab|m)$ \\
+    ext-R de $a|m~\&~b|m$ & $a, b, m$, $a|m~\&~b|m$, $(\exists k \in \mathbb{Z})[ m = ak ]$, $(\exists k \in \mathbb{Z})[ m = bk ]$ & $\neg(ab|m)$ \\
+    seja $u$ tal que $m = au$ & $a, b, m$, $a|m~\&~b|m$, $(\exists k \in \mathbb{Z})[ m = ak ]$, $(\exists k \in \mathbb{Z})[ m = bk ]$, $u$ & $\neg(ab|m)$ \\
+    seja $v$ tal que $m = bv$ & $a, b, m$, $a|m~\&~b|m$, $(\exists k \in \mathbb{Z})[ m = ak ]$, $(\exists k \in \mathbb{Z})[ m = bk ]$, $u$, $v$ & $\neg(ab|m)$ \\
+    Calculamos:  & & \\    
+    \hline
+    \end{tabular}
+\end{table}
+
+\repls
+\maxproof : Seja $k\in\ints$ tal que $x = 2k+1$. ;
+\maxgiven : \ \ \lexists {k\in\ints} {x = 2k+1}  ;
+\maxgoal  : \ \ \lexists {a\in\ints} {x = 2a+1}  ;
+\repl
+~     : Seja $x$ inteiro. ;
+~     : Suponha $x$ ímpar. ;
+\givens
+~     : x \in \ints ;
+~    t: $x$ ímpar ;
+~    =: \lexists {k\in\ints} {x = 2k+1} ;
+\goals
+~    t: $x^2$ ímpar ;
+~    =: \lexists {a\in\ints} {x^2 = 2a + 1} ;
+\endrepl
 
 \end{document}
 
