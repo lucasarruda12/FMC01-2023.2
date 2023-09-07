@@ -64,7 +64,90 @@
 
 \section{2023-09-04}
 
-\subsection*{Capítulo 3: até Θ3.13}
+\subsection*{Capítulo 3: até $\theta$3.13}
 %
-
+\subsubsection*{EXERCÍCIO x3.1.\\
+Para cada axioma que parece favorecendo o lado direito, sua versão esquerda é um
+teorema: o 0 é uma (+)-identidade-L; o 1 é uma (·)-identidade-L; para todo a o -a é um
+(+)-inverso-L de a; e a (·) distribui-se sobre a (+) pela esquerda também:
+}
+%
+\begin{table}[H]
+  \begin{dem}
+  \end{dem}
+  \begin{alvodados}
+      \cmnt{}{$(\forall a)[0 + a = a]$}
+  \end{alvodados}
+\end{table}
+%
+\begin{table}[H]
+  \begin{dem}
+      \linha{Seja $a$ um inteiro}
+  \end{dem}
+  \begin{alvodados}
+      \cmnt{$a$}{$0 + a = a$}
+  \end{alvodados}
+\end{table}
+%
+\begin{table}[H]
+  \begin{dem}
+      \linha{Seja $a$ um inteiro}
+      \linha{calculamos:}
+  \end{dem}
+  \begin{alvodados}
+      \cmnt{$a$}{$0 + a = a$}
+  \end{alvodados}
+\end{table}
+%
+\begin{align*}
+  0 + a &= a + 0 \tag*{[(ZA-Com) a 0]}\\
+  &= a \tag*{[(ZA-IdR) a]}
+\end{align*}
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{seja $a$ inteiro}
+    \linha{calculamos:}
+  \end{dem}
+  \begin{alvodados}
+      \cmnt{$a$}{$(-a) + a = 0$}
+  \end{alvodados}
+\end{table}
+%
+\begin{align*}
+  (-a) + a &= a + (-a) \tag*{[(ZA-Com) a (-a)]}\\
+  &= 0 \tag*{[(ZA-InvR)] a}
+\end{align*}
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{seja $a$ inteiro}
+    \linha{calculamos:}
+  \end{dem}
+  \begin{alvodados}
+      \cmnt{$a$}{$1 \cdot a = a$}
+  \end{alvodados}
+\end{table}
+%
+\begin{align*}
+  1 \cdot a &= a \cdot 1 \tag*{[(ZM-Com) 1 a]}\\
+  &= a \tag*{[(ZM-IdR) a]}
+\end{align*}
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{sejam $a, b, d$ inteiros}
+    \linha{calculamos:}
+  \end{dem}
+  \begin{alvodados}
+      \cmnt{$a$}{$d \cdot (a+b) = (d\cdot a) + (d \cdot b)$}
+      \cmnt{$b$}{}
+      \cmnt{$d$}{}
+  \end{alvodados}
+\end{table}
+%
+\begin{align*}
+  d \cdot (a + b) &= (a + b) \cdot d \tag*{[(ZM-Com) d (a+b)]}\\
+  &= (a \cdot d) + (b \cdot d) \tag*{[(Z-distR) a b d]}
+\end{align*}
 \end{document}
