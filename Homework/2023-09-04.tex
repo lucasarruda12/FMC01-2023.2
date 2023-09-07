@@ -71,6 +71,7 @@ Para cada axioma que parece favorecendo o lado direito, sua versão esquerda é 
 teorema: o 0 é uma (+)-identidade-L; o 1 é uma (·)-identidade-L; para todo a o -a é um
 (+)-inverso-L de a; e a (·) distribui-se sobre a (+) pela esquerda também:
 }
+(ZA-IdL) $(\forall a)[0 + a = a]$
 %
 \begin{table}[H]
   \begin{dem}
@@ -104,6 +105,8 @@ teorema: o 0 é uma (+)-identidade-L; o 1 é uma (·)-identidade-L; para todo a 
   &= a \tag*{[(ZA-IdR) a]}
 \end{align*}
 %
+(ZA-InvL) $(\forall a)[(-a) + a = 0]$
+%
 \begin{table}[H]
   \begin{dem}
     \linha{seja $a$ inteiro}
@@ -119,6 +122,8 @@ teorema: o 0 é uma (+)-identidade-L; o 1 é uma (·)-identidade-L; para todo a 
   &= 0 \tag*{[(ZA-InvR)] a}
 \end{align*}
 %
+(ZM-IdL) $(\forall a)[1 \cdot a = a]$
+%
 \begin{table}[H]
   \begin{dem}
     \linha{seja $a$ inteiro}
@@ -133,6 +138,8 @@ teorema: o 0 é uma (+)-identidade-L; o 1 é uma (·)-identidade-L; para todo a 
   1 \cdot a &= a \cdot 1 \tag*{[(ZM-Com) 1 a]}\\
   &= a \tag*{[(ZM-IdR) a]}
 \end{align*}
+%
+(Z-DistL) $(\forall d, a, b)[d \cdot (a + b) = (d \cdot a) + (d \cdot b)]$
 %
 \begin{table}[H]
   \begin{dem}
@@ -150,4 +157,170 @@ teorema: o 0 é uma (+)-identidade-L; o 1 é uma (·)-identidade-L; para todo a 
   d \cdot (a + b) &= (a + b) \cdot d \tag*{[(ZM-Com) d (a+b)]}\\
   &= (a \cdot d) + (b \cdot d) \tag*{[(Z-distR) a b d]}
 \end{align*}
+%
+\subsubsection*{EXERCÍCIO x3.2.\\
+Demonstre as leis de “passar termo por outro lado”:}
+%
+$(\forall a,~b,~c )[a + b = c \iff a = c-b]$
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{sejam $a, b, c$ inteiros}
+    \linha{split}
+  \end{dem}
+  \begin{alvodados}
+      \cmnt{$a$}{$a + b = c \iff a = c-b$}
+      \cmnt{$b$}{}
+      \cmnt{$c$}{}
+  \end{alvodados}
+\end{table}
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{suponha $a + b = c$}
+    \linha{calculamos:}
+  \end{dem}
+  \begin{alvodados}
+      \cmnt{$a$}{$a = c-b$}
+      \cmnt{$b$}{}
+      \cmnt{$c$}{}
+      \cmnt{$a + b = c^{[1]}$}{}
+  \end{alvodados}
+\end{table}
+%
+\begin{align*}
+  c - b &= (a + b) - b \tag*{[1]}\\
+  &= a + (b - b) \tag*{[(ZA-Ass) a b -b]}\\
+  &= a + 0 \tag*{[(ZA-InvR) b]}\\
+  &= a \tag*{[(ZA-IdR) a]}
+\end{align*}
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{suponha $a = c - b$}
+    \linha{calculamos:}
+  \end{dem}
+  \begin{alvodados}
+      \cmnt{$a$}{$a + b = c$}
+      \cmnt{$b$}{}
+      \cmnt{$c$}{}
+      \cmnt{$a = c - b^{[1]}$}{}
+  \end{alvodados}
+\end{table}
+%
+\begin{align*}
+  a + b &= (c - b) + b \tag*{[1]}\\
+  &= c + ((-b) + b) \tag*{[(ZA-Ass) c -b b]}\\
+  &= c + (b + (-b)) \tag*{[(ZA-Com) -b b]}\\
+  &= c + 0 \tag*{[(ZA-InvR) b]}\\
+  &= c \tag*{[(ZA-IdR) c]}
+\end{align*}
+%
+$(\forall a,~b,~c )[a + b = c \iff b = c-a]$
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{sejam $a, b, c$ inteiros}
+    \linha{split}
+  \end{dem}
+  \begin{alvodados}
+      \cmnt{$a$}{$a + b = c \iff b = c-a$}
+      \cmnt{$b$}{}
+      \cmnt{$c$}{}
+  \end{alvodados}
+\end{table}
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{suponha $a + b = c$}
+    \linha{calculamos:}
+  \end{dem}
+  \begin{alvodados}
+      \cmnt{$a$}{$b = c-a$}
+      \cmnt{$b$}{}
+      \cmnt{$c$}{}
+      \cmnt{$a + b = c^{[1]}$}{}
+  \end{alvodados}
+\end{table}
+%
+\begin{align*}
+  c - a &= (a + b) - a \tag*{[1]}\\
+  &= (b + a) - a \tag*{[(ZA-Com) a b]}\\
+  &= b + (a - a) \tag*{[(ZA-Ass) b a -a]}\\
+  &= b + 0 \tag*{[(ZA-InvR)]}\\
+  &= b \tag*{[(ZA-IdR) b]}
+\end{align*}
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{suponha $b = c - a$}
+    \linha{calculamos:}
+  \end{dem}
+  \begin{alvodados}
+      \cmnt{$a$}{$a + b = c$}
+      \cmnt{$b$}{}
+      \cmnt{$c$}{}
+      \cmnt{$b = c - a^{[1]}$}{}
+  \end{alvodados}
+\end{table}
+%
+\begin{align*}
+  a + b &= a + (c - a) \tag*{[1]}\\
+  &= a + ((-a) + c) \tag*{[(ZA-Com) c -a]}\\
+  &= a + (-a) + c \tag*{{[(ZA-Ass) a -a c]}}\\
+  &= 0 + c \tag*{[(ZA-InvR) a]}\\
+  &= c \tag*{[(ZA-IdL) c]}
+\end{align*}
+%
+$(\forall a,~b )[a = b \iff a - b = 0]$
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{sejam $a,~b$ inteiros}
+    \linha{split}
+  \end{dem}
+  \begin{alvodados}
+      \cmnt{$a$}{$a = b \iff a - b = 0$}
+      \cmnt{$b$}{}
+  \end{alvodados}
+\end{table}
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{Suponha $a=b$}
+    \linha{calculamos:}
+  \end{dem}
+  \begin{alvodados}
+    \cmnt{$a$}{$a - b = 0$}
+    \cmnt{$b$}{}
+    \cmnt{$a=b^{[1]}$}{}
+  \end{alvodados}
+\end{table}
+%
+\begin{align*}
+  a - b &= a - a \tag*{[1]}\\
+  &= 0 \tag*{[(ZA-InvR) a]}
+\end{align*}
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{Suponha $a-b=0$}
+    \linha{calculamos:}
+  \end{dem}
+  \begin{alvodados}
+    \cmnt{$a$}{$a = b$}
+    \cmnt{$b$}{}
+    \cmnt{$a-b=0^{[1]}$}{}
+  \end{alvodados}
+\end{table}
+%
+\begin{align*}
+  b &= b + 0 \tag*{[(ZA-IdR) a]}\\
+  &= b + (a - b) \tag*{[1]}\\
+  &= b + ((-b) + a) \tag*{[(ZA-Com) a -b]}\\
+  &= (b + (-b)) + a \tag*{[(ZA-Ass) b -b a]}\\
+  &= 0 + a \tag*{[(ZA-InvR) b]}\\
+  &= a \tag*{[(ZA-IdL) a]}  
+\end{align*}
+
 \end{document}
