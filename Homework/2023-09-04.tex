@@ -18,6 +18,7 @@
 \usepackage{tikz} % TikZ - Desenhos e Gráficos
 \usepackage{amsmath,amssymb} % Mais símbolos matemáticos
 \usepackage[shortlabels]{enumitem} % Usar letras no enumerate
+\usepackage{centernot}
 
 % PREÂMBULOS
 \newcounter{linhadem}
@@ -322,5 +323,55 @@ $(\forall a,~b )[a = b \iff a - b = 0]$
   &= 0 + a \tag*{[(ZA-InvR) b]}\\
   &= a \tag*{[(ZA-IdL) a]}  
 \end{align*}
+%
+\subsubsection*{EXERCÍCIO x3.3.\\
+Seja $\heartsuit$ uma operação binária. Demonstre que para quaisquer a, b, x,\\
+$a = b \implies a \heartsuit x = b \heartsuit x$;\\
+$a = b \implies x \heartsuit a = x \heartsuit b$.\\
+Observe que isso tem como casos especiais que podemos somar (ou multiplicar) o mesmo
+inteiro nos dois lados duma equação (pelo mesmo lado), já que a operação binária $\heartsuit$ aqui
+é uma operação arbitrária. 
+}
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{sejam $a, b, x$ inteiros}
+    \linha{suponha a = b}
+    \linha{calculamos:}
+  \end{dem}
+  \begin{alvodados}
+    \cmnt{$a$}{$a \heartsuit x = b \heartsuit x$}
+    \cmnt{$b$}{}
+    \cmnt{$x$}{}
+    \cmnt{$a = b^{[1]}$}{}
+  \end{alvodados}
+\end{table}
+%
+\begin{align*}
+  a\heartsuit x &= b \heartsuit a \tag*{[1]} 
+\end{align*}
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{sejam $a, b, x$ inteiros}
+    \linha{suponha a = b}
+    \linha{calculamos:}
+  \end{dem}
+  \begin{alvodados}
+    \cmnt{$a$}{$x \heartsuit a = x \heartsuit b$}
+    \cmnt{$b$}{}
+    \cmnt{$x$}{}
+    \cmnt{$a = b^{[1]}$}{}
+  \end{alvodados}
+\end{table}
+%
+\begin{align*}
+  x\heartsuit a &= x \heartsuit b \tag*{[1]} 
+\end{align*}
+%
+\subsubsection*{EXERCÍCIO x3.4.\\
+Podemos “desfazer” a mesma operação nos dois lados?:}
+Não! Tome por contra exemplo a operação de exponenciação com $a=2$, $b=(-2)$ e $x = 2$. Nesse caso: $a^2 = 4 = b^2 \centernot\implies a = b$
+%
 
 \end{document}
