@@ -373,5 +373,53 @@ inteiro nos dois lados duma equação (pelo mesmo lado), já que a operação bi
 Podemos “desfazer” a mesma operação nos dois lados?:}
 Não! Tome por contra exemplo a operação de exponenciação com $a=2$, $b=(-2)$ e $x = 2$. Nesse caso: $a^2 = 4 = b^2 \centernot\implies a = b$
 %
+\subsubsection*{EXERCÍCIO x3.5. \\
+Demonstre o Teorema $\theta$3.10. Cuidado: terminando uma, não faz sentido a outra ocupar
+um espaço parecido no teu texto!}
+%
+$\theta 3.10.1~(\forall a, b, c)[ a + c = b + c \implies a = b ]$
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{sejam $a, b, c$ inteiros}
+    \linha{suponha $a + c = b + c$}
+    \linha{calculamos:}
+  \end{dem}
+  \begin{alvodados}
+    \cmnt{$a$}{$a = b$}
+    \cmnt{$b$}{}
+    \cmnt{$c$}{}
+    \cmnt{$a + c = b + c^{[1]}$}{}
+  \end{alvodados}
+\end{table}
+%
+\begin{align*}
+  a &= a + 0 \tag*{[(ZA-IdR) a]}\\
+  & = a + (c - c) \tag*{[(ZA-InvR) c]}\\
+  &= (a + c) - c \tag*{[(ZA-Ass) a c -c]}\\
+  &= (b + c) - c \tag*{[1]}\\
+  &= b + (c - c) \tag*{[(ZA-Ass) b c -c]}\\
+  &= b + 0 \tag*{[(ZA-InvR) c]}\\
+  &= b \tag*{[(ZA-IdR) b]}
+\end{align*}
+%
+$\theta 3.10.2~(\forall a, b, c)[ c + a = c + b \implies a = b ]$
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{sejam $a, b, c$ inteiros}
+    \linha{suponha $c + a = c + b$}
+    \linha{logo $a + c = c + b$, por [(ZA-Com) c a]}
+    \linha{logo $a + c = b + c$, por [(ZA-Com) c b]}
+    \linha{logo $a = b$, por [($\theta 3.10.1$)]}
+  \end{dem}
+  \begin{alvodados}
+    \cmnt{$a$}{$a = b$}
+    \cmnt{$b$}{}
+    \cmnt{$c$}{}
+    \cmnt{$c + a = c + b^{[1]}$}{}
+  \end{alvodados}
+\end{table}
+%
 
 \end{document}
