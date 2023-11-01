@@ -377,7 +377,7 @@ Não! Tome por contra exemplo a operação de exponenciação com $a=2$, $b=(-2)
 Demonstre o Teorema $\theta$3.10. Cuidado: terminando uma, não faz sentido a outra ocupar
 um espaço parecido no teu texto!}
 %
-$\theta 3.10.1~(\forall a, b, c)[ a + c = b + c \implies a = b ]$
+(ZA-CanR) $(\forall a, b, c)[ a + c = b + c \implies a = b ]$
 %
 \begin{table}[H]
   \begin{dem}
@@ -403,7 +403,7 @@ $\theta 3.10.1~(\forall a, b, c)[ a + c = b + c \implies a = b ]$
   &= b \tag*{[(ZA-IdR) b]}
 \end{align*}
 %
-$\theta 3.10.2~(\forall a, b, c)[ c + a = c + b \implies a = b ]$
+(ZA-CanL) $(\forall a, b, c)[ c + a = c + b \implies a = b ]$
 %
 \begin{table}[H]
   \begin{dem}
@@ -411,7 +411,7 @@ $\theta 3.10.2~(\forall a, b, c)[ c + a = c + b \implies a = b ]$
     \linha{suponha $c + a = c + b$}
     \linha{logo $a + c = c + b$, por [(ZA-Com) c a]}
     \linha{logo $a + c = b + c$, por [(ZA-Com) c b]}
-    \linha{logo $a = b$, por [($\theta 3.10.1$)]}
+    \linha{logo $a = b$, por [(ZA-CanR) a b c]}
   \end{dem}
   \begin{alvodados}
     \cmnt{$a$}{$a = b$}
@@ -421,5 +421,47 @@ $\theta 3.10.2~(\forall a, b, c)[ c + a = c + b \implies a = b ]$
   \end{alvodados}
 \end{table}
 %
-
+\subsubsection*{EXERCÍCIO x3.6.\\
+Enuncie e refute a proposição correpsondente para a multiplicação.}
+%
+(ZM-CanR) $(\forall a, b, c)[ a \cdot c = b \cdot c \implies a = b ]$
+%
+Por contra-exemplo: suponha $a=1$, $b=2$ e $c=0$. Nesse caso, $a \cdot c = 0 = b \cdot c \centernot \implies a = b$.
+%
+\subsubsection*{EXERCÍCIO x3.7.\\
+Demonstre o Unicidade da ( $\cdot$ )-identidade $\theta$3.12}
+%
+$(\exists i)(\forall a)[a \cdot i = a~\&~i \cdot a = a]~\&~(\forall i, j)(\forall a)[(i \cdot a = a~\&~a \cdot i = a)~\&~(j \cdot a = a~\&~a \cdot j = a) \implies i = j]$
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{split}
+  \end{dem}
+  \begin{alvodados}
+    \cmnt{}{$(\exists i)(\forall a)[a \cdot i = a~\&~i \cdot a = a]~\&~(\forall i, j)(\forall a)[(i \cdot a = a~\&~a \cdot i = a)~\&~(j \cdot a = a~\&~a \cdot j = a) \implies i = j]$}
+  \end{alvodados}
+\end{table}
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{escolha $1$}
+    \linha{seja $a$ inteiro}
+    \linha{split}
+  \end{dem}
+  \begin{alvodados}
+    \cmnt{$0$}{$a \cdot 1 = a~\&~1 \cdot a = a$}
+    \cmnt{$a$}{}
+  \end{alvodados}
+\end{table}
+%
+\begin{table}[H]
+  \begin{dem}
+    \linha{logo, $a \cdot 1 = a$, por $[()]$}
+  \end{dem}
+  \begin{alvodados}
+    \cmnt{$1$}{$a \cdot 1 = a$}
+    \cmnt{$a$}{}
+  \end{alvodados}
+\end{table}
+%
 \end{document}
